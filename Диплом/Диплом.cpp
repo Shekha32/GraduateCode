@@ -141,16 +141,16 @@ public:
 
 	long double &operator[](ui ind) const  //оператор индексирования [] (возвращает элемент с введенным (переданным) индексом)
 	{
-		long double k = 0;
-		if (ind > size) return k;
+		if (ind < 0) cout << "Введенный индекс меньше нуля";
+		if (ind > size) cout <<"Введенный индекс больше размерности вектора";
 		return mas[ind];
 	}
 
 
 	long double &operator()(ui ind) const  //оператор индексирования () (возвращает элемент с введенным (переданным) индексом)
 	{
-		long double k = 0;
-		if (ind > size) return k;
+		if (ind < 0) cout << "Введенный индекс меньше нуля";
+		if (ind > size) cout << "Введенный индекс больше размерности вектора";
 		return mas[ind];
 	}
 
@@ -230,7 +230,7 @@ public:
 	//friend Vector operator*(float a, Vector &b);
 	friend Vector operator*(long double a, Vector &b);
 	friend ostream &operator<<(ostream &os, Vector obj);
-	ui getSize() const { return size; }  //метод, возвращающий текущий размер массива
+	ui getSize() const { return size; }  //метод, возвращающий текущий размер массива (геттер)
 };
 
 
